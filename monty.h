@@ -31,4 +31,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* prototypes */
+int (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number);
+
+/* libraries */
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 #endif
