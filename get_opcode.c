@@ -7,6 +7,7 @@
 int (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number)
 {
     int i = 0;
+	
 	/*instruction_t ops[] = {
 
 		{'push', _push},

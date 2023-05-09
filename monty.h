@@ -33,10 +33,12 @@ typedef struct instruction_s
 
 /* prototypes */
 int (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number);
+char *openfile(char *file);
 
 /* libraries */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <fcntl.h>
 
 #endif
