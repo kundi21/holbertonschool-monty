@@ -4,24 +4,28 @@
  * @opcode: the opcode
  * Return: function that matches the opcode
  */
-int (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number)
+void (*get_opcode(char *opcode, unsigned int line_number))(stack_t **stack)
 {
-    int i = 0;
-	
-	/*instruction_t ops[] = {
+	/*int i = 0;
+	char *token = NULL;
 
+	instruction_t ops[] = {
 		{'push', _push},
 		{'pall', _pall},
 		{'pint', _pint},
 		{'pop', _pop},
 		{'swap', _swap},
 		{'add', _add},
-        {'nop', _nop},
+		{'nop', _nop},
 		{'\0', NULL},
 	};
-    for (; ops[i].opcode != '\0'; i++)
-    {
-        if (ops[i].opcode == opcode)
-            return (ops[i].f);
-    }*/
+
+	token = strtok(opcode, " \t");
+	for (; ops[i].opcode != '\0'; i++)
+	{
+		if (strcmp(ops[i].opcode, token == 0))
+			return (ops[i].f);
+	}
+	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);*/
 }
