@@ -11,7 +11,7 @@ char **tokenize(char *string, char delim)
 	char *token;
 	int i = 0, length = 0, x = 0;
 
-	for (i = 0; string[i]; i++)
+	for (i = 0; string && string[i]; i++)
 	{
 		if (string[i + 1] == delim)
 			length++;
@@ -22,12 +22,12 @@ char **tokenize(char *string, char delim)
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(string, delim);
+	token = strtok(string, &delim);
 	while (token != NULL)
 	{
 		tokens[x] = strdup(token);
 		x++;
-		token = strtok(NULL, delim);
+		token = strtok(NULL, &delim);
 	}
 	tokens[x] = NULL;
 	return (tokens);

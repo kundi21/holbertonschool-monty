@@ -32,14 +32,16 @@ typedef struct instruction_s
 } instruction_t;
 
 /* prototypes */
-void (*get_opcode(char *opcode, unsigned int line_number))(stack_t **stack);
+void (*get_opcode(char *opcode, unsigned int line_number))(stack_t **stack, unsigned int);
 char *openfile(char *file);
 char **tokenize(char *string, char delim);
+void _nop(stack_t **stack, unsigned int line_number);
 
 /* libraries */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <string.h>
 
 #endif
