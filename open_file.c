@@ -7,7 +7,7 @@
 char *openfile(char *file)
 {
 	int fd;
-	char *buffer = malloc(12345);
+	char *buffer = malloc(33333);
 
 	if (!buffer)
 	{
@@ -24,7 +24,7 @@ char *openfile(char *file)
 		exit(EXIT_FAILURE);
 	}
 
-	read(fd, buffer, 12345);
+	read(fd, buffer, 33333);
 	close(fd);
 	return (buffer);
 }

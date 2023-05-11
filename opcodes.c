@@ -8,7 +8,7 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	char *value;
 
-	value = strtok(NULL, " \t");
+	value = strtok(NULL, " \t\n");
 	if (check_num(value) == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
