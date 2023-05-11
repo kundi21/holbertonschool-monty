@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * main -
+ * main - main
  * @argc: argument count
  * @argv: list of arguments
  * Return: 0 if success, EXIT_FAILURE otherwise
