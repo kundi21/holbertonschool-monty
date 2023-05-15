@@ -9,7 +9,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	char *value;
 
 	value = strtok(NULL, " \t\n");
-	if (check_num(value) == 0)
+	if (value == NULL || value[0] == '\0' || check_num(value) == 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -56,6 +56,23 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 			aux = aux->next;
 		}
 	}
+}
+
+/**
+ * _pint - prints the value at the top of the stack
+ * @stack: double linked list
+ * @line_number: line number of the monty file
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+
+	if (!(*stack))
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", aux->n);
 }
 
 /**

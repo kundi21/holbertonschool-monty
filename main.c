@@ -34,11 +34,12 @@ int main(int argc, char *argv[])
 	for (i = 0; token[i]; i++)
 	{
 		free(token[i]);
-    }
+	}
 	free(token);
 	while (stack_h)
 	{
 		stack_t *temp = stack_h;
+
 		stack_h = stack_h->next;
 		free(temp);
 	}
