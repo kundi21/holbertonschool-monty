@@ -76,6 +76,24 @@ void _pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * _pop - removes the top element of the stack
+ * @stack: double linked list
+ * @line_number: line number of the monty file
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+
+	if (!(*stack))
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	*stack = (*stack)->next;
+	free(aux);
+}
+
+/**
  * _nop - opcode nop doesn’t do anything
  * @stack: double linked list
  * @line_number: line number of the monty file
